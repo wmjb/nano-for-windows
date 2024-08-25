@@ -501,6 +501,10 @@ jobs:
           wget -q https://raw.githubusercontent.com/okibcn/nano-for-windows/releases/LICENSE
           wget -q https://raw.githubusercontent.com/okibcn/nano-for-windows/releases/README.md
           mv bin/nano.exe share/doc/nano/* $CWD/nano/doc/sample.nanorc.in .
+          mkdir extra
+          mv ../build/lib/libgnu.a extra/
+          mv ../build/lib/Makefile extra/libgnumakefile
+          mv ../curses/wincon/pdcurses.a extra/
           mv share/nano syntax
           mv sample.nanorc.in .nanorc
           rm -rf bin share rnano*
