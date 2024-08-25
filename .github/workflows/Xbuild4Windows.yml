@@ -154,7 +154,7 @@ jobs:
       run: |
         git clone git://git.savannah.gnu.org/nano.git --depth 1
         cd nano
-        git clone https://github.com/Bill-Gray/PDCursesMod.git curses
+        git clone https://github.com/wmjb/PDCursesMod.git curses
         git clone git://git.sv.gnu.org/gnulib.git --depth 1
         autopoint --force
         glibmodules="
