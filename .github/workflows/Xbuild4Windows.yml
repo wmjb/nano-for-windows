@@ -514,7 +514,7 @@ jobs:
           7z a -mx9 -mm=Deflate64 -mmt$(nproc) "$CWD/nano-for-windows_${{matrix.name}}_${{ needs.checks.outputs.build }}.zip" * .nanorc
 
     - name: "👍 Upload Artifact nano-for-windows_${{ matrix.name }}_${{ needs.checks.outputs.build }}.zip"
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: nano-for-windows_${{ matrix.name }}_${{ needs.checks.outputs.build }}
         path: |
@@ -550,7 +550,7 @@ jobs:
         shell: bash
     steps:
     - name: "📬 Receive Packages"
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         path: ./
 
@@ -566,7 +566,7 @@ jobs:
         echo "${{ needs.checks.outputs.body }}" | base64 -d > body.txt
 
     - name: "👍 Upload nano-for-windows_${{ needs.checks.outputs.build }} as Artifact"
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: github.event.inputs.release == 'Artifact'
       with:
         name: nano-for-windows_${{ needs.checks.outputs.build }}
